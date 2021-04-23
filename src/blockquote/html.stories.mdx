@@ -1,0 +1,75 @@
+<!--
+@license EUPL-1.2
+Copyright (c) 2021 Robbert Broersma
+Copyright (c) 2021 Gemeente Utrecht
+-->
+
+import { Meta, Story, Canvas, ArgsTable, Description, Source } from "@storybook/addon-docs/blocks";
+import { sanitize } from "dompurify"; // Helps with preventing injections via argstable
+import { MDXEmbedProvider } from "mdx-embed";
+import dedent from "ts-dedent";
+
+<!-- Import component and component styles -->
+
+import "./index.css";
+
+<!-- Import Docs -->
+
+import README from "./README.md";
+
+export const Template = ({ content, attribution }) =>
+  `<section class="utrecht-html">
+  <blockquote>
+    <p>${content}</p>${
+    attribution
+      ? `
+    <p><cite>${attribution}</cite></p>`
+      : ""
+  }
+  </blockquote>
+</section>`;
+
+<Meta
+  title="Semantic HTML/Blockquote"
+  argTypes={{
+    content: {
+      description: "Content of the quote",
+      control: "text",
+      defaultValue: "The Quick Brown Fox Jumps Over The Lazy Dog",
+    },
+    attribution: {
+      description: "Attribution of the quote",
+      control: "text",
+      defaultValue: "",
+    },
+  }}
+  parameters={{
+    docs: {
+      transformSource: (_src, { args }) => Template(args),
+    },
+    status: "IN DEVELOPMENT",
+    notes: {
+      UX: README,
+    },
+  }}
+/>
+
+# Blockquote in
+
+Styling via the `<blockquote>` element:
+
+<Canvas>
+  <Story name="Blockquote in HTML">{Template.bind({})}</Story>
+</Canvas>
+
+## Blockquote with attribution
+
+Styling via the `<blockquote>` and `<cite>` element:
+
+<Canvas>
+  <Story name="Blockquote with attribution" args={{ attribution: "L. Ipsum" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Blockquote" />

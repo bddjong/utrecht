@@ -1,0 +1,11 @@
+.utrecht-html blockquote,
+.utrecht-blockquote {
+  margin-inline-start: var(--utrecht-blockquote-margin-inline-start);
+  margin-inline-end: var(--utrecht-blockquote-margin-inline-end);
+  margin-block-start: var(--utrecht-blockquote-margin-block);
+  margin-block-end: var(--utrecht-blockquote-margin-block);
+
+  font-family: var(--utrecht-document-font-family);
+  font-size: var(--utrecht-blockquote-font-size);
+  color: var(--utrecht-blockquote-color, inherit);
+}
