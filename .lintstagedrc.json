@@ -2,5 +2,5 @@
   "package.json": "npmPkgJsonLint",
   "*.md": "markdownlint",
   "*.{js,jsx,ts,tsx}": "eslint",
-  "*.css": "stylelint"
+  "*.css": "stylelint --allow-empty-input"
 }
