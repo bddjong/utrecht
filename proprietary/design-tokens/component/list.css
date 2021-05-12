@@ -1,0 +1,14 @@
+/**
+ * @license SEE LICENSE.md
+ * Copyright (c) 2021 Gemeente Utrecht
+ * All rights reserved
+ */
+
+:root {
+  --utrecht-ordedlist-padding-inline: var(--utrecht-space-inline-3xl);
+
+  --utrecht-ordedlist-margin-inline: var(--utrecht-space-inline-lg);
+  --utrecht-ordedlist-margin-block: var(--utrecht-space-block-md);
+
+  --utrecht-ordedlist-item-padding-block: var(--utrecht-space-block-2xs);
+}

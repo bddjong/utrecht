@@ -1,0 +1,12 @@
+.utrecht-html {
+  font-family: var(--utrecht-font-family-sans-serif);
+}
+
+.utrecht-orderedlist {
+  padding-inline-start: var(--utrecht-ordedlist-padding-inline);
+}
+
+.utrecht-orderedlist__item {
+  padding-block-start: var(--utrecht-ordedlist-item-padding-block);
+  padding-block-end: var(--utrecht-ordedlist-item-padding-block);
+}

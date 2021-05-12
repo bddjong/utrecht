@@ -1,0 +1,64 @@
+import { Meta, Story, Canvas, ArgsTable, Description, Source } from "@storybook/addon-docs/blocks";
+import { sanitize } from "dompurify"; // Helps with preventing injections via argstable
+import { MDXEmbedProvider } from "mdx-embed";
+import dedent from "ts-dedent";
+
+<!-- Import component and component styles -->
+
+import "./style.css";
+
+<!-- Import Docs -->
+
+import README from "./README.md";
+import contentGuidelines from "./docs/content-guidelines.md";
+import accessibilityGuidelines from "./docs/accessibility-guidelines.md";
+
+export const Template = ({ href, content }) =>
+  `<div class="utrecht-html">
+    <ol class="utrecht-orderedlist">
+        <li class="utrecht-orderedlist__item">
+          menu item<a href="#"> label #1</a>
+        </li>
+        <li class="utrecht-orderedlist__item">
+          list item label #2
+        </li>
+         <li class="utrecht-orderedlist__item">
+          <a href="#">list item</a> label #3
+        </li>
+    </ol>
+</div>
+`;
+
+<Meta
+  title="Components/orderedlist"
+  argTypes={{}}
+  parameters={{
+    docs: {
+      transformSource: (_src, { args }) => Template(args),
+    },
+    status: "IN DEVELOPMENT",
+    notes: {
+      UX: README,
+      //Content: contentGuidelines,
+      // Accessibility: accessibilityGuidelines
+    },
+  }}
+/>
+
+# Demo Implemented orderedlist Component
+
+To use the component as a web component, make sure the component is defined by including the components `element.js` file
+
+<Canvas>
+  <Story name="orderedlist" args={{ href: "#", content: "orderedlist" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="ordered-list" />
+
+## Design Kit
+
+<MDXEmbedProvider>
+  <Figma title="ordered-list" url="file/x" />
+</MDXEmbedProvider>
