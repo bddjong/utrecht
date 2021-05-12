@@ -50,3 +50,12 @@
   /* @presenter FontFamily */
   --utrecht-form-input-font-family: var(--utrecht-font-family-sans-serif);
 }
+
+/**
+ * @tokens Component / Form field
+ */
+ :root {
+  /* @presenter Sizing */
+  --utrecht-form-field-margin-block-start: var(--utrecht-space-block-xs);
+  --utrecht-form-field-margin-block-end: var(--utrecht-space-block-xs);
+}

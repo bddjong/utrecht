@@ -1,0 +1,68 @@
+<!--
+@license EUPL-1.2
+Copyright (c) 2021 Robbert Broersma
+-->
+
+import { Meta, Story, Canvas, ArgsTable, Description, Source } from "@storybook/addon-docs/blocks";
+import { sanitize } from "dompurify"; // Helps with preventing injections via argstable
+import { MDXEmbedProvider } from "mdx-embed";
+import dedent from "ts-dedent";
+
+<!-- Import component and component styles -->
+
+import "./index.css";
+import "../radio/index.css";
+import "../form-label/index.css";
+
+<!-- Import Docs -->
+
+import README from "./README.md";
+
+export const Template = ({ label, name }) =>
+`<div class="utrecht-form-field-radio-group">
+  <div class="utrecht-form-field-radio">
+    <input type="radio" name ="${name}" class="utrecht-form-field-radio__input utrecht-radio" id="1">
+  <label class="utrecht-form-field-radio__label" for="1">${label}</label>
+  </div>
+  <div class="utrecht-form-field-radio">
+    <input type="radio" name ="${name}" class="utrecht-form-field-radio__input utrecht-radio" id="2">
+  <label class="utrecht-form-field-radio__label" for="2">${label}</label>
+    </div>
+  <div class="utrecht-form-field-radio">
+    <input type="radio" name ="${name}" class="utrecht-form-field-radio__input utrecht-radio" id="3">
+  <label class="utrecht-form-field-radio__label" for="3">${label}</label>
+  </div>
+  </div>`;
+
+<Meta
+  title="Molecules/Form field"
+  argTypes={{
+    label: {
+      description: "Set the content of the label",
+      control: "text",
+      defaultValue: "I agree",
+    },
+    name: {
+      description: "Set the name of the radio button",
+      control: "text",
+      defaultValue: "radiobutton",
+    },
+    }}
+  parameters={{
+    docs: {
+      transformSource: (_src, { args }) => Template(args),
+    },
+    status: "IN DEVELOPMENT",
+    notes: {
+      UX: README,
+    },
+  }}
+/>
+
+# Form field with radio
+
+<Canvas>
+  <Story name="Form field with radio group">{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable story="Form field with radio group" />
