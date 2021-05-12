@@ -14,15 +14,10 @@ import "./html.scss";
 
 import README from "./README.md";
 
-export const Template = ({ content, attribution }) =>
+export const Template = ({ content }) =>
   `<section class="utrecht-html">
   <blockquote>
-    <p>${content}</p>${
-    attribution
-      ? `
-    <p><cite>${attribution}</cite></p>`
-      : ""
-  }
+    <p>${content}</p>
   </blockquote>
 </section>`;
 
@@ -33,11 +28,6 @@ export const Template = ({ content, attribution }) =>
       description: "Content of the quote",
       control: "text",
       defaultValue: "The Quick Brown Fox Jumps Over The Lazy Dog",
-    },
-    attribution: {
-      description: "Attribution of the quote",
-      control: "text",
-      defaultValue: "",
     },
   }}
   parameters={{
@@ -57,16 +47,6 @@ Styling via the `<blockquote>` element:
 
 <Canvas>
   <Story name="Blockquote in HTML">{Template.bind({})}</Story>
-</Canvas>
-
-## Blockquote with attribution
-
-Styling via the `<blockquote>` and `<cite>` element:
-
-<Canvas>
-  <Story name="Blockquote with attribution" args={{ attribution: "L. Ipsum" }}>
-    {Template.bind({})}
-  </Story>
 </Canvas>
 
 <ArgsTable story="Blockquote" />
