@@ -1,0 +1,57 @@
+<!--
+@license EUPL-1.2
+Copyright (c) 2021 Robbert Broersma
+-->
+
+import { Meta, Story, Canvas, ArgsTable, Description, Source } from "@storybook/addon-docs/blocks";
+import { sanitize } from "dompurify"; // Helps with preventing injections via argstable
+import { MDXEmbedProvider } from "mdx-embed";
+import dedent from "ts-dedent";
+
+<!-- Import component and component styles -->
+
+import "./index.css";
+import "../dropdown/index.css";
+import "../form-label/index.css";
+
+<!-- Import Docs -->
+
+import README from "./README.md";
+
+export const Template = ({ label }) =>
+`<div class="utrecht-form-field-dropdown">
+  <label class="utrecht-form-field-dropdown__label" for="choice">${label}</label>
+    <select id="choice" name="choice">
+      <option value="A">Keuze A</option>
+      <option value="B">Keuze B</option>
+      <option value="C">Keuze C</option>
+    </select>
+</div>`
+
+<Meta
+  title="Molecules/Form field"
+  argTypes={{
+    label: {
+      description: "Set the content of the label",
+      control: "text",
+      defaultValue: "Maak een keuze:",
+    },
+  }}
+  parameters={{
+    docs: {
+      transformSource: (_src, { args }) => Template(args),
+    },
+    status: "IN DEVELOPMENT",
+    notes: {
+      UX: README,
+    },
+  }}
+/>
+
+# Form field with dropdown
+
+<Canvas>
+  <Story name="Form field with dropdown">{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable story="Form field with dropdown" />

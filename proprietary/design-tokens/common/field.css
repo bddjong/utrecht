@@ -1,0 +1,15 @@
+/**
+ * @license SEE LICENSE.md
+ * Copyright (c) 2021 Gemeente Utrecht
+ * All rights reserved
+ */
+
+/**
+ * @tokens Common / Sizing
+ * @presenter Sizing
+ */
+:root {
+  --utrecht-field-border-bottom-width: 3px;
+  --utrecht-field-max-width: 28em;
+  --utrecht-field-width: 100%;
+}
