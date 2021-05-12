@@ -27,7 +27,6 @@
 }
 
 .utrecht-form-field-dropdown__label {
-  /*  margin-inline-start: 1ch;*/
   font-weight: var(--utrecht-font-weight-bold);
   clear: both;
   display: block;
