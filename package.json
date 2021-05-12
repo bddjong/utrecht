@@ -66,6 +66,7 @@
     "prettier": "prettier --write .",
     "storybook": "start-storybook -p 6006 -s src/static/,proprietary/assets/,proprietary/design-tokens/",
     "start": "node_modules/http-server/bin/http-server dist/storybook/",
+    "start:huwelijksplanner": "node_modules/http-server/bin/http-server apps/huwelijksplanner",
     "test": "exit 0"
   },
   "dependencies": {
