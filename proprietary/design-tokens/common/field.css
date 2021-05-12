@@ -9,7 +9,25 @@
  * @presenter Sizing
  */
 :root {
-  --utrecht-field-border-bottom-width: 3px;
   --utrecht-field-max-width: 28em;
   --utrecht-field-width: 100%;
+
+  /*--utrecht-field-padding:;
+  padding-block-start: 0.5em;
+  padding-block-end: 0.5em;
+  padding-inline-start: 0.75em;
+  padding-inline-end: 0.75em;*/
+}
+
+/**
+ * @tokens Common / Styling
+ * @presenter Styling
+ */
+
+:root {
+  --utrecht-field-border-bottom-width: 3px;
+  --utrecht-field-border-radius: 0;
+  --utrecht-field-border-width: 1px;
+  --utrecht-field-border-style: solid;
+  --utrecht-field-border-color: var(--utrecht-grey-30);
 }

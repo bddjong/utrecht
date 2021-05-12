@@ -10,9 +10,20 @@
 }
 
 .utrecht-form-field-dropdown select {
+  -webkit-appearance: none;
+  appearance: none;
+  border-width: var(--utrecht-field-border-width, 1px);
   border-bottom-width: var(--utrecht-field-border-bottom-width, 1px);
+  border-style: var(--utrecht-field-border-style);
+  border-color: var(--utrecht-field-border-color);
+
   max-width: var(--utrecht-field-max-width);
   width: var(--utrecht-field-width);
+
+  padding-block-start: var(--utrecht-space-block-lg);
+  padding-block-end: var(--utrecht-space-block-lg);
+  padding-inline-start: var(--utrecht-space-inline-lg);
+  padding-inline-end: var(--utrecht-space-inline-lg);
 }
 
 .utrecht-form-field-dropdown__label {
