@@ -1,0 +1,16 @@
+/**
+ * @license EUPL-1.2
+ * Copyright (c) 2021 Robbert Broersma
+ */
+
+.utrecht-page-content {
+  margin-block-end: var(--utrecht-page-content-margin-block-end);
+  margin-block-start: var(--utrecht-page-content-margin-block-start);
+  margin-inline-end: var(--utrecht-page-content-margin-inline-end);
+  margin-inline-start: var(--utrecht-page-content-margin-inline-start);
+  max-inline-size: var(--utrecht-page-content-max-inline-size);
+  padding-block-end: var(--utrecht-page-content-padding-block-end);
+  padding-block-start: var(--utrecht-page-content-padding-block-start);
+  padding-inline-end: var(--utrecht-page-content-padding-inline-end);
+  padding-inline-start: var(--utrecht-page-content-padding-inline-start);
+}

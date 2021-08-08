@@ -1,0 +1,15 @@
+{
+  "utrecht": {
+    "page-content": {
+      "margin-block-end": {},
+      "margin-block-start": {},
+      "margin-inline-end": { "value": "{utrecht.space.column.2xl.value}" },
+      "margin-inline-start": { "value": "{utrecht.space.column.2xl.value}" },
+      "max-inline-size": { "value": "1184px", "comment": "originally: 74em" },
+      "padding-block-end": {},
+      "padding-block-start": {},
+      "padding-inline-end": {},
+      "padding-inline-start": {}
+    }
+  }
+}
