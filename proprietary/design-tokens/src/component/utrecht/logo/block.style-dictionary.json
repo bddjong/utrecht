@@ -1,8 +1,10 @@
 {
   "utrecht": {
     "logo": {
-      "max-height": { "value": "58.97px" },
-      "max-width": { "value": "110.57px" }
+      "max-height": {},
+      "max-width": { "value": "192px" },
+      "min-width": { "value": "128px" },
+      "min-height": {}
     }
   }
 }
