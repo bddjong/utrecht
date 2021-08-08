@@ -31,6 +31,13 @@ export const Template = ({ items }) => `<div class="utrecht-navhtml">
 </div>
 `;
 
+export const exampleItems = [
+  { href: "https://example.com/", title: "Wonen en leven", current: true },
+  { href: "https://example.com/", title: "Werk en inkomen", focus: true },
+  { href: "https://example.com/", title: "Ondernemen" },
+  { href: "https://example.com/", title: "Bestuur en organisatie" },
+];
+
 <Meta
   title="CSS Component/Top Nav"
   argTypes={{
@@ -56,12 +63,7 @@ export const Template = ({ items }) => `<div class="utrecht-navhtml">
   <Story
     name="Top Nav"
     args={{
-      items: [
-        { href: "https://example.com/", title: "Wonen en leven", current: true },
-        { href: "https://example.com/", title: "Werk en inkomen", focus: true },
-        { href: "https://example.com/", title: "Ondernemen" },
-        { href: "https://example.com/", title: "Bestuur en organisatie" },
-      ],
+      items: exampleItems,
     }}
   >
     {Template.bind({})}

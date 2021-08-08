@@ -9,6 +9,29 @@ import "./bem.scss";
 
 import README from "./README.md";
 
+export const exampleLinks = [
+  {
+    href: "https://www.facebook.com/GemeenteUtrecht",
+    icon: "utrecht-icon-facebook",
+  },
+  {
+    href: "https://www.instagram.com/GemeenteUtrecht/",
+    icon: "utrecht-icon-instagram",
+  },
+  {
+    href: "https://nl.linkedin.com/company/gemeente-utrecht",
+    icon: "utrecht-icon-linkedin",
+  },
+  {
+    href: "https://twitter.com/gemeenteutrecht",
+    icon: "utrecht-icon-twitter",
+  },
+  {
+    href: "https://api.whatsapp.com/send?phone=31624927665",
+    icon: "utrecht-icon-whatsapp",
+  },
+];
+
 export const Template = ({ href, icon, distanced }) => `<a href="${href}" class="${clsx(
   "utrecht-link-social",
   distanced && "utrecht-link-social--distanced"
@@ -81,28 +104,7 @@ export const ListTemplate = ({ links }) =>
   <Story
     name="List of links to Social Media"
     args={{
-      links: [
-        {
-          href: "https://www.facebook.com/GemeenteUtrecht",
-          icon: "utrecht-icon-facebook",
-        },
-        {
-          href: "https://www.instagram.com/GemeenteUtrecht/",
-          icon: "utrecht-icon-instagram",
-        },
-        {
-          href: "https://nl.linkedin.com/company/gemeente-utrecht",
-          icon: "utrecht-icon-linkedin",
-        },
-        {
-          href: "https://twitter.com/gemeenteutrecht",
-          icon: "utrecht-icon-twitter",
-        },
-        {
-          href: "https://api.whatsapp.com/send?phone=31624927665",
-          icon: "utrecht-icon-whatsapp",
-        },
-      ],
+      links: exampleLinks,
     }}
   >
     {ListTemplate.bind({})}

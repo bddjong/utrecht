@@ -11,6 +11,11 @@ import "../link/bem.scss";
 
 import README from "./README.md";
 
+export const exampleAlternateLanguages = [
+  { textContent: "EN", title: "This page in English", lang: "en", current: true, hreflang: "en" },
+  { textContent: "NL", title: "Deze pagina in Nederlands", lang: "nl", current: false, hreflang: "nl" },
+];
+
 export const AlternateLangNav = ({ languages }) =>
   `<div class="utrecht-alternate-lang-nav">${languages
     .map(AlternateLangLink)
@@ -38,10 +43,7 @@ export const AlternateLangNav = ({ languages }) =>
   <Story
     name="Alternative Languages Navigation"
     args={{
-      languages: [
-        { textContent: "EN", title: "This page in English", lang: "en", current: true, hreflang: "en" },
-        { textContent: "NL", title: "Deze pagina in Nederlands", lang: "nl", current: false, hreflang: "nl" },
-      ],
+      languages: exampleAlternateLanguages,
     }}
   >
     {AlternateLangNav.bind({})}
