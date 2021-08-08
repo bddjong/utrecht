@@ -1,0 +1,82 @@
+<!--
+@license EUPL-1.2
+Copyright (c) 2021 Robbert Broersma
+-->
+
+import { Description, Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+
+import "./bem.css";
+
+import README from "./README.md";
+
+import { Template as NavTop } from "../nav-top/bem.stories.mdx";
+import { Template as PageFooter, exampleFooterContent } from "../page-footer/bem.stories.mdx";
+import { AlternateLangNav, exampleAlternateLanguages } from "../alternate-lang-nav/stories.mdx";
+import { Template as SearchBar } from "../search-bar/bem.stories.mdx";
+import { ListTemplate as SocialMediaLinks, exampleLinks } from "../link-social/bem.stories.mdx";
+
+export const exampleNavItems = [
+  { href: "https://example.com/", title: "Wonen en leven" },
+  { href: "https://example.com/", title: "Werk en inkomen" },
+  { href: "https://example.com/", title: "Ondernemen" },
+  { href: "https://example.com/", title: "Bestuur en organisatie" },
+];
+
+export const Template = ({ innerHTML = "" }) => `<div class="utrecht-page">
+  <heading class="utrecht-page-heading">
+    <div class="utrecht-page-heading__logo">
+      <utrecht-logo></utrecht-logo>
+    </div>
+    <div class="utrecht-page-heading__search">${SearchBar({
+      buttonLabel: "Zoeken",
+      formLabel: "zoeken in Utrecht.nl",
+      inputLabel: "zoektermen",
+    })}</div>
+    <div class="utrecht-page-heading__alternate">${AlternateLangNav({
+      languages: exampleAlternateLanguages,
+    })}</div>
+    <div class="utrecht-page-heading__nav">${NavTop({ items: exampleNavItems })}</div>
+  </heading>
+  <div class="utrecht-page-content">
+    <main class="utrecht-main-content">
+      <article class="utrecht-article">
+        <div class="utrecht-html-content">${innerHTML}</div>
+      </article>
+    </main>
+  </div>
+  <footer class="utrecht-page-footer">${PageFooter({
+    innerHTML: `${exampleFooterContent}${SocialMediaLinks({ links: exampleLinks })}`,
+  })}</footer>
+</html>`;
+
+<Meta
+  title="CSS Component/Page"
+  argTypes={{
+    innerHTML: {
+      description: "HTML content",
+      control: "text",
+    },
+  }}
+  parameters={{
+    docs: {
+      transformSource: (_src, { args }) => Template(args),
+    },
+    status: "WORK IN PROGRESS",
+  }}
+/>
+
+<Description>{README}</Description>
+
+<Canvas>
+  <Story
+    name="Page"
+    args={{
+      innerHTML: `<h1>Example Page</h1>
+<p>Hello, world!</p>`,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Page" />
