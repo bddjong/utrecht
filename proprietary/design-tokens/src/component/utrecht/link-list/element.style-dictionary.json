@@ -1,0 +1,19 @@
+{
+  "utrecht": {
+    "link-list": {
+      "item": {
+        "margin-block-start": {
+          "value": "{utrecht.space.block.xs.value}"
+        },
+        "font-weight": {
+          "value": "700"
+        }
+      },
+      "marker": {
+        "inline-size": {
+          "value": "16px"
+        }
+      }
+    }
+  }
+}
